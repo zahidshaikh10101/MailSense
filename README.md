@@ -66,7 +66,7 @@ git clone https://github.com/zahidshaikh10101/Mailsense.git
 
 
 ## Screenshots
-<img width="557" alt="app" src="https://github.com/zahidshaikh10101/VidSage/blob/main/image/intro.png"> 
+<img width="557" alt="app" src="[https://github.com/zahidshaikh10101/VidSage/blob/main/image/intro.png](https://github.com/zahidshaikh10101/MailSense/blob/main/images/0.png)"> 
 <img width="557" alt="app" src="https://github.com/zahidshaikh10101/VidSage/blob/main/image/VS.png"> 
 <img width="557" alt="app" src="https://github.com/zahidshaikh10101/VidSage/blob/main/image/VA.png"> 
 <img width="557" alt="app" src="https://github.com/zahidshaikh10101/VidSage/blob/main/image/VD.png"> 
