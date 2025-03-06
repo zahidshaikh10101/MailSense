@@ -76,8 +76,6 @@ git clone https://github.com/zahidshaikh10101/Mailsense.git
 ---
 
 ## Technologies Used
-- **Python** (Streamlit, Pandas, ReportLab, Requests, Tqdm, Regular Expressions (re), io, os, time, datetime, json)
-- **APIs** (YouTube Media Downloader, YouTube Transcript API, Google Generative AI (Gemini))
 
 - **Python**
 - **Machine Learning:**
