@@ -42,9 +42,9 @@ With **Mailsense**, users can:
 Follow the steps below to set up and run **Mailsense** on your local machine.
 
 1. Clone the repository:
-```bash
-git clone https://github.com/zahidshaikh10101/Mailsense.git
-```
+  ```bash
+  git clone https://github.com/zahidshaikh10101/Mailsense.git
+  ```
 2. Navigate to the project directory:
    ```bash
    cd Mailsense
