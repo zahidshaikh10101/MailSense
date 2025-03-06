@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Message Classification Using Python & Machine Learning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+    body {
+        background-color: #1A0F2D; 
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        margin-top: 50px;
+        padding: 30px;
+        border-radius: 15px;
+        background-color: #2A1A4D; 
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+        color: #BB86FC;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+    }
+
+    h5 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        background-color: #3E2A6D;
+        color: #ffffff;
+        border: 1px solid #5C4B8A;
+        border-radius: 5px;
+    }
+
+    .form-control:focus {
+        background-color: #5C4B8A;
+        border-color: #BB86FC;
+        color: #ffffff;
+    }
+
+    .btn-primary {
+        background-color: #BB86FC;
+        border-color: #BB86FC;
+        color: #000;
+        border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+        background-color: #9B6BCE;
+        border-color: #9B6BCE;
+    }
+
+    .alert {
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .email-container, .summary-container, .reply-container {
+        background-color: #2A1A4D;
+        color: #ffffff;
+        padding: 15px;
+        padding-top: 2px;
+        border-radius: 5px;
+        border: 1px solid #5C4B8A;
+        margin-top: 20px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+    .sentiment-container {
+        background-color: #2A1A4D;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #BB86FC;
+        margin-top: 20px;
+    }
+
+    .alert-success {
+        background-color: #1B5E20;
+        color: #ffffff;
+        border-color: #2E7D32;
+    }
+
+    .alert-danger {
+        background-color: #B71C1C;
+        color: #ffffff;
+        border-color: #D32F2F;
+    }
+
+    label {
+        color: #e0e0e0;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #bbb;
+    }
+
+    .positive-message {
+        color: #76FF03;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .negative-message {
+        color: #FF3D00;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>MailSense</h1>
+        <h5>Smarter Insights, Safer Inbox, Seamless Replies!</h5>
+        <form method="POST" action="{{ url_for('analyze_mail') }}">
+            <div class="form-group">
+                <textarea class="form-control" id="mail" name="mail" rows="5" placeholder="Type your email content here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Analyze</button>
+        </form>
+
+        {% if classify is defined and sentiment is defined and summarizer is defined %}
+            <div class="mt-4">
+                <div class="email-container">
+                    <h5>Email Content:</h5>
+                    <p>{{ mail }}</p>
+                </div>
+
+                <div class="alert alert-{{ 'danger' if classify == 0 else 'success' }}" role="alert">
+                    This is a {{ 'spam' if classify == 0 else 'ham' }} mail
+                </div>
+
+                <div class="sentiment-container">
+                    {% if sentiment == 'Positive' %}
+                        <div class="positive-message">
+                            <p>Great! This email has a positive sentiment.</p>
+                        </div>
+                    {% elif sentiment == 'Negative' %}
+                        <div class="negative-message">
+                            <p>Warning! This email has a negative sentiment.</p>
+                        </div>
+                    {% else %}
+                        <p>This email has a neutral sentiment.</p>
+                    {% endif %}
+                </div>
+                
+                <div class="summary-container">
+                    <h5>Email Summary:</h5>
+                    <p>{{ summarizer }}</p>
+                </div>
+
+                <div class="reply-container">
+                    <h5>Suggested Email Reply:</h5>
+                    <p>{{ replyer }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MailSense. All rights reserved.</p>
+        Made with <span class="heart">❤️</span> by <span class="name">Zahid Salim Shaikh</span>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
