@@ -41,7 +41,7 @@ With **Mailsense**, users can:
 
 Follow the steps below to set up and run **Mailsense** on your local machine.
 
-### 1. Clone the repository:
+1. Clone the repository:
 ```bash
 git clone https://github.com/zahidshaikh10101/Mailsense.git
 ```
@@ -59,7 +59,7 @@ git clone https://github.com/zahidshaikh10101/Mailsense.git
    ```
 5. Open your browser and go to:
    ```
-   [http://localhost:8000](http://127.0.0.1:5000/)
+   http://127.0.0.1:5000/
    ```
 
 ---
