@@ -22,7 +22,7 @@ def analyze_sentiment(email_text):
         return "Neutral"
 
 def email_summarizer(emails):
-    genai.configure(api_key="AIzaSyDWppjrc6PUg7hHaI3G2J71Q_TRfUNOM9g")
+    genai.configure(api_key="") # Add your API KEY
     generation_config = {
     "temperature": 0.7,
     "top_p": 0.95,
@@ -45,7 +45,7 @@ def email_summarizer(emails):
     return response.text
 
 def email_replyer(emails):
-    genai.configure(api_key="AIzaSyDWppjrc6PUg7hHaI3G2J71Q_TRfUNOM9g")
+    genai.configure(api_key="") # Add your API KEY
     generation_config = {
     "temperature": 0.7,
     "top_p": 0.95,
