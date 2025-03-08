@@ -106,7 +106,7 @@ For any queries or suggestions, feel free to reach out:
 
 ---
 
-### Enjoy using MailSense! 🎥📌📥
+### Enjoy using MailSense! 📥📌
 
 
 
